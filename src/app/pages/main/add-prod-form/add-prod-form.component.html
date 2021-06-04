@@ -1,0 +1,65 @@
+<div class="form-group p-5">
+  <i
+    class="far fa-times-circle"
+    (click)="manufacturersService.showForm = false"
+  ></i>
+  <div class="form-group">
+    <label for="manufacturers">manufacturer select</label>
+
+    <select
+      [(ngModel)]="manufacturersService.selectedManufacturer"
+      class="form-control"
+      id="manufacturers"
+    >
+      <option
+        value="{{ i }}"
+        *ngFor="let mfr of manufacturersService.manufacturers; let i = index"
+      >
+        {{ mfr.name }}
+      </option>
+    </select>
+    <label for="petSelect">Pet select</label>
+    <select
+      [(ngModel)]="manufacturersService.selectedPetType"
+      class="form-control"
+      id="petSelect"
+    >
+      <option value="0">Cat Line</option>
+      <option value="1">Dog Line</option>
+    </select>
+
+    <div>
+      <label for="exampleInputEmail1">Product Name</label>
+      <input
+        type="text"
+        [(ngModel)]="manufacturersService.selectedProduct.name"
+        name="userName"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Product name"
+      />
+    </div>
+
+    <div>
+      <label for="exampleInputEmail1">Add Price:</label>
+      <input
+        type="number"
+        [(ngModel)]="manufacturersService.selectedProduct.price"
+        name="userName"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter Price"
+      />
+    </div>
+  </div>
+
+  <button
+    type="button"
+    class="btn btn-primary mt-2"
+    (click)="manufacturersService.AddProduct()"
+  >
+    Add Product
+  </button>
+</div>

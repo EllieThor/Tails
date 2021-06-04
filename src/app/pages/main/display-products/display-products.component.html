@@ -1,0 +1,21 @@
+<div class="mfrDisplay">
+  <div class="row p-4">
+    <div
+      class="col-4 mr-1"
+      *ngFor="
+        let product of manufacturersService.selectedProductsLine;
+        let i = index
+      "
+    >
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <div class="card-text">
+            For: {{ product.petType === 0 ? "Cats" : "Dogs" }}
+          </div>
+          <div class="card-text">{{ product.price }} &#8362;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

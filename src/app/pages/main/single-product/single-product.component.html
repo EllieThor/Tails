@@ -1,0 +1,9 @@
+<div class="card border-primary" style="width: 25rem">
+  <div class="card-body">
+    <h5 class="card-title">Manufacturer: {{ manufacturer.name }}</h5>
+    <p class="card-text">Country: {{ manufacturer.country }}</p>
+    <div *ngFor="let product of manufacturer.products">
+      <app-single-manufacturer [product]="product"></app-single-manufacturer>
+    </div>
+  </div>
+</div>

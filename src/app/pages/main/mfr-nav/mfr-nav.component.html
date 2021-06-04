@@ -1,0 +1,32 @@
+<div class="row MfrButtons text-center">
+  <div class="col-3">
+    <button
+      type="button"
+      class="btn m-3"
+      [ngClass]="
+        manufacturersService.selectedDisplayMfr == -1
+          ? 'btn-danger'
+          : 'btn-warning'
+      "
+      (click)="manufacturersService.MfrClicked(-1)"
+    >
+      all Mfrs
+    </button>
+  </div>
+  <div
+    class="col-3"
+    *ngFor="let mfr of manufacturersService.manufacturers; let i = index"
+  >
+    <button
+      class="btn m-3"
+      [ngClass]="
+        manufacturersService.selectedDisplayMfr == i
+          ? 'btn-danger'
+          : 'btn-warning'
+      "
+      (click)="manufacturersService.MfrClicked(i)"
+    >
+      {{ mfr.name }}
+    </button>
+  </div>
+</div>
